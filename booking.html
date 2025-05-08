@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt chỗ - S3-MRS</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="Logo" class="logo__img">
+                <div class="nav">
+                    <button class="nav__item">Giới thiệu</button>
+                    <button class="nav__item nav__item--active">Đặt chỗ</button>
+                    <button class="nav__item">Chỗ của tôi</button>
+                </div>
+            </div>
+           
+            <div class="auth">
+                <button class="auth__btn auth__btn--register" id="header-register-btn">Đăng ký</button>
+                <button class="auth__btn auth__btn--login" id="header-login-btn">Đăng nhập</button>
+                <img src="assets/images/bg-index.png" alt="Logo" class="intro__slogan--small">
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="booking">
+            <div class="booking__title"><i class="fa fa-angle-down"></i> <b>Chọn khu tự học</b></div>
+            <div class="booking__floors">
+                <button class="booking__floor booking__floor--active">Tầng 1</button>
+                <button class="booking__floor">Tầng 2</button>
+            </div>
+            <div class="booking__layout">
+                <div class="booking__seats"></div>
+                <div class="booking__side">
+                    <div class="booking__legend">
+                        <div>
+                            <span class="booking__seat booking__seat--free">
+                                <img src="assets/images/Seat (2).png" alt="Ghế trống">
+                                <span class="booking__seat-number">1</span>
+                            </span>
+                            Ghế còn trống
+                        </div>
+                        <div>
+                            <span class="booking__seat booking__seat--busy">
+                                <img src="assets/images/Seat.png" alt="Ghế có người">
+                                <span class="booking__seat-number">2</span>
+                            </span>
+                            Ghế đang có người ngồi
+                        </div>
+                        <div>
+                            <span class="booking__seat booking__seat--broken">
+                                <img src="assets/images/Seat (1).png" alt="Ghế hỏng">
+                                <span class="booking__seat-number">3</span>
+                            </span>
+                            Ghế đang bảo trì hoặc bị hỏng
+                        </div>
+                    </div>
+                    <form class="booking__form">
+                        <label>Chọn ghế <input type="text" class="booking__input" placeholder="23"></label>
+                        <label>Thời gian đặt chỗ <input type="text" class="booking__input" placeholder="3 giờ"></label>
+                        <button class="booking__btn">Chọn</button>
+                    </form>
+                </div>
+            </div>
+            <div class="booking__rooms">
+                <div>Phòng họp nhóm:</div>
+                <div class="booking__rooms-list">
+                    <div class="booking__room"><span class="booking__seat booking__seat--free"></span> Phòng 01</div>
+                    <div class="booking__room"><span class="booking__seat booking__seat--busy"></span> Phòng 02<br><span class="booking__room-desc">Máy lạnh<br>Máy chiếu</span></div>
+                    <div class="booking__room"><span class="booking__seat booking__seat--broken"></span> Phòng 03<br><span class="booking__room-desc">Quạt<br>Bàn đôi</span></div>
+                </div>
+            </div>
+        </section>
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/booking.js"></script>    
+    </main>
+</body>
+</html> 

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin cá nhân - S3-MRS</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+           <div class="logo">
+                <img src="assets/images/logo.png" alt="Logo" class="logo__img">
+                <div class="nav">
+                    <button class="nav__item">Giới thiệu</button>
+                    <button class="nav__item">Đặt chỗ</button>
+                    <button class="nav__item">Chỗ của tôi</button>
+                                    <button class="nav__item nav__item--qr">Quét QR</button>
+                </div>
+            </div>
+            <div class="auth">
+                <div class="user-menu" id="user-menu">
+                    <img src="assets/images/avatar-default.png" alt="Avatar" class="user-menu__avatar">
+                    <span class="user-menu__name" id="profile-user-name">User</span>
+                    <i class="fa fa-chevron-down"></i>
+                    <div class="user-menu__dropdown">
+                        <div class="user-menu__profile">My Profile</div>
+                        <div class="user-menu__logout" id="logout-btn">Log Out</div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="profile">
+            <h1 class="profile__title">Thông tin cá nhân</h1>
+            <div class="profile__container" id="profile-container">
+                <div class="profile__avatar-block">
+                    <img src="assets/images/avatar-default.png" alt="Avatar" class="profile__avatar" id="profile-avatar">
+                    <div class="profile__avatar-info">
+                        <div class="profile__avatar-name" id="profile-fullname">Test123</div>
+                        <div class="profile__avatar-email" id="profile-email">test123@hcmut.edu.vn</div>
+                    </div>
+                    <span class="profile__edit-main" id="profile-edit-main"><i class="fa fa-pen"></i></span>
+                </div>
+                <form id="profile-form">
+                <div class="profile__info" id="profile-info-view">
+                    <div class="profile__row"><span class="profile__label">Name</span><span class="profile__value" id="profile-name">Anh</span></div>
+                    <div class="profile__row"><span class="profile__label">Email account</span><span class="profile__value" id="profile-email2">test123@hcmut.edu.vn</span></div>
+                    <div class="profile__row"><span class="profile__label">Mobile number</span><span class="profile__value" id="profile-phone">07787177390</span></div>
+                    <div class="profile__row"><span class="profile__label">Password</span><span class="profile__value" id="profile-password">********</span></div>
+                </div>
+                <div class="profile__info" id="profile-info-edit" style="display:none">
+                    <div class="profile__row"><span class="profile__label">Name</span><input type="text" class="profile__input-edit" id="edit-name"></div>
+                    <div class="profile__row"><span class="profile__label">Email account</span><input type="email" class="profile__input-edit" id="edit-email"></div>
+                    <div class="profile__row"><span class="profile__label">Mobile number</span><input type="text" class="profile__input-edit" id="edit-phone"></div>
+                    <div class="profile__row"><span class="profile__label">Password</span><input type="password" class="profile__input-edit" id="edit-password"></div>
+                </div>
+                <button class="profile__button" id="profile-save-btn" style="display:none" type="submit">Save Change</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <div class="toast-message"></div>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+    // Hiển thị thông tin user từ localStorage
+    const user = JSON.parse(localStorage.getItem('currentUser') || 'null');
+    function renderProfileView() {
+        if (user) {
+            document.getElementById('profile-user-name').textContent = user.firstName + ' ' + user.lastName;
+            document.getElementById('profile-fullname').textContent = user.firstName + ' ' + user.lastName;
+            document.getElementById('profile-email').textContent = user.email;
+            document.getElementById('profile-name').textContent = user.firstName;
+            document.getElementById('profile-email2').textContent = user.email;
+            document.getElementById('profile-phone').textContent = user.phone;
+            document.getElementById('profile-password').textContent = user.password.replace(/./g, '*');
+        }
+    }
+    renderProfileView();
+
+    // Edit mode logic
+    const editBtn = document.getElementById('profile-edit-main');
+    const infoView = document.getElementById('profile-info-view');
+    const infoEdit = document.getElementById('profile-info-edit');
+    const saveBtn = document.getElementById('profile-save-btn');
+    let isEdit = false;
+    let oldEmail = user ? user.email : '';
+    editBtn.onclick = function() {
+        isEdit = !isEdit;
+        if (isEdit) {
+            infoView.style.display = 'none';
+            infoEdit.style.display = 'block';
+            saveBtn.style.display = 'block';
+            editBtn.innerHTML = '<i class="fa fa-xmark"></i>';
+            document.getElementById('edit-name').value = user.firstName;
+            document.getElementById('edit-email').value = user.email;
+            document.getElementById('edit-phone').value = user.phone;
+            document.getElementById('edit-password').value = user.password;
+        } else {
+            infoView.style.display = 'block';
+            infoEdit.style.display = 'none';
+            saveBtn.style.display = 'none';
+            editBtn.innerHTML = '<i class="fa fa-pen"></i>';
+        }
+    };
+    document.getElementById('profile-form').onsubmit = function(e) {
+        e.preventDefault();
+        const newName = document.getElementById('edit-name').value.trim();
+        const newEmail = document.getElementById('edit-email').value.trim();
+        const newPhone = document.getElementById('edit-phone').value.trim();
+        const newPassword = document.getElementById('edit-password').value;
+        if (!newName || !newEmail || !newPhone || !newPassword) {
+            showMessage(null, 'Vui lòng điền đầy đủ thông tin!', 'error'); return;
+        }
+        // Cập nhật user
+        user.firstName = newName;
+        user.email = newEmail;
+        user.phone = newPhone;
+        user.password = newPassword;
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        // Cập nhật trong danh sách users (tìm theo email cũ)
+        let users = JSON.parse(localStorage.getItem('users') || '[]');
+        let idx = users.findIndex(u => u.email === oldEmail);
+        if (idx !== -1) users[idx] = user;
+        localStorage.setItem('users', JSON.stringify(users));
+        showMessage(null, 'Cập nhật thành công!', 'success');
+        setTimeout(() => { window.location.reload(); }, 1200);
+    };
+    </script>
+</body>
+</html> 

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - Hệ thống đặt chỗ thông minh</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="Logo" class="logo__img">
+                <div class="nav">
+                    <button class="nav__item">Giới thiệu</button>
+                    <button class="nav__item">Đặt chỗ</button>
+                    <button class="nav__item">Chỗ của tôi</button>
+                </div>
+            </div>
+           
+            <div class="auth">
+                <button class="auth__btn auth__btn--register" id="header-register-btn">Đăng ký</button>
+                <button class="auth__btn auth__btn--login" id="header-login-btn">Đăng nhập</button>
+                <img src="assets/images/bg-index.png" alt="Logo" class="intro__slogan--small">
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="login">
+            <div class="login__left">
+                <form class="login__form" autocomplete="off">     
+                    <h2 class="login__title">Đăng nhập</h2>
+                    <div class="login__input-group">
+                        <input type="email" id="email" class="login__input" placeholder=" " required>
+                        <label for="email" class="login__label">Email</label>
+                    </div>
+                    <div class="login__input-group">
+                        <input type="password" id="password" class="login__input" placeholder=" " required>
+                        <label for="password" class="login__label">Password</label>
+                        <span class="login__toggle-password"><i class="fa fa-eye-slash"></i></span>
+                    </div>
+                    <div class="login__options">
+                        <label class="login__checkbox">
+                            <input type="checkbox"> Nhớ mật khẩu
+                        </label>
+                        <a href="#" class="login__forgot">Quên mật khẩu</a>
+                    </div>
+                    <button type="submit" class="login__button">Đăng nhập</button>
+                    <div class="login__register-link">
+                        Chưa có tài khoản? <a href="#">Đăng ký ngay</a>
+                    </div>
+                </form>
+            </div>
+            <div class="login__right">
+                <img src="assets/images/classroom.png" alt="Classroom" class="login__image">
+            </div>
+        </div>
+        <img src="assets/images/bg-index-big.png" alt="Logo" class="intro__slogan--big">
+    </main>
+    <script src="assets/js/main.js"></script>
+</body>
+</html> 

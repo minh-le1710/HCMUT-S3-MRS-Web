@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký - Hệ thống đặt chỗ thông minh</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="Logo" class="logo__img">
+                <div class="nav">
+                    <button class="nav__item">Giới thiệu</button>
+                    <button class="nav__item">Đặt chỗ</button>
+                    <button class="nav__item">Chỗ của tôi</button>
+                </div>
+            </div>
+           
+            <div class="auth">
+                <button class="auth__btn auth__btn--register" id="header-register-btn">Đăng ký</button>
+                <button class="auth__btn auth__btn--login" id="header-login-btn">Đăng nhập</button>
+                <img src="assets/images/bg-index.png" alt="Logo" class="intro__slogan--small">
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="register">
+            <div class="register__left">
+                <form class="register__form" autocomplete="off">
+                    <h2 class="register__title">Đăng ký</h2>
+                    <div class="register__desc">Chỉ một thao tác đơn giản, đặt chỗ ngay với S3-MRS!!!</div>
+                    <div class="register__row">
+                        <div class="register__input-group">
+                            <input type="text" id="firstName" class="register__input" placeholder=" " required>
+                            <label for="firstName" class="register__label">Tên</label>
+                        </div>
+                        <div class="register__input-group">
+                            <input type="text" id="lastName" class="register__input" placeholder=" " required>
+                            <label for="lastName" class="register__label">Họ</label>
+                        </div>
+                    </div>
+                    <div class="register__row">
+                        <div class="register__input-group">
+                            <input type="email" id="email" class="register__input" placeholder=" " required>
+                            <label for="email" class="register__label">Email</label>
+                        </div>
+                        <div class="register__input-group">
+                            <input type="text" id="phone" class="register__input" placeholder=" " required>
+                            <label for="phone" class="register__label">Phone Number</label>
+                        </div>
+                    </div>
+                    <div class="register__input-group">
+                        <input type="password" id="password" class="register__input" placeholder=" " required>
+                        <label for="password" class="register__label">Password</label>
+                        <span class="register__toggle-password"><i class="fa fa-eye-slash"></i></span>
+                    </div>
+                    <div class="register__input-group">
+                        <input type="password" id="confirmPassword" class="register__input" placeholder=" " required>
+                        <label for="confirmPassword" class="register__label">Confirm Password</label>
+                        <span class="register__toggle-password"><i class="fa fa-eye-slash"></i></span>
+                    </div>
+                    <button type="submit" class="register__button">Tạo tài khoản</button>
+                </form>
+            </div>
+            <div class="register__right">
+                <img src="assets/images/classroom.png" alt="Classroom" class="register__image">
+            </div>
+        </div>
+                <img src="assets/images/bg-index-big.png" alt="Logo" class="intro__slogan--big">
+
+    </main>
+    <script src="assets/js/main.js"></script>
+</body>
+</html> 

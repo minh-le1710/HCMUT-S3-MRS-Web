@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chỗ của tôi - S3-MRS</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="Logo" class="logo__img">
+                <div class="nav">
+                    <button class="nav__item">Giới thiệu</button>
+                    <button class="nav__item">Đặt chỗ</button>
+                    <button class="nav__item nav__item--active">Chỗ của tôi</button>
+                    <button class="nav__item nav__item--qr">Quét QR</button>
+                </div>
+            </div>
+            
+            <div class="auth">
+                <button class="auth__btn auth__btn--register" id="header-register-btn">Đăng ký</button>
+                <button class="auth__btn auth__btn--login" id="header-login-btn">Đăng nhập</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="my-booking">
+            <div class="my-booking__container" id="my-booking-container">
+                <!-- Nội dung sẽ được render bằng JS -->
+            </div>
+            <div class="my-booking__qr-popup" id="qr-popup" style="display:none;">
+                <div class="my-booking__qr-content">
+                    <h2>Thông tin Đặt chỗ<br><span style="font-size:1rem;font-weight:400;">(Scan mã QR để bắt đầu sử dụng)</span></h2>
+                    <canvas id="qr-canvas"></canvas>
+                    <button class="my-booking__qr-close" id="close-qr-btn">Đóng</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/my-bookings.js"></script>
+</body>
+</html> 
