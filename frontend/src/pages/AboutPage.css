@@ -1,0 +1,37 @@
+.about-main {
+    padding: 20px 180px;
+    box-sizing: border-box;
+  }
+  
+  .about-title {
+    font-family: 'Caveat', cursive;
+    font-size: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .about-text {
+    flex: 1;
+    font-size: 24px;
+    color: #1a1a1a;
+    line-height: 1.4;
+    font-weight: 750;
+    margin-bottom: 100px;
+  }
+  
+  .about-image img {
+    max-width: 450px;
+    height: auto;
+    border-radius: 0px;
+  }
+  
+  .right-section {
+    margin-right: 60px;
+    gap: 10px;
+  }

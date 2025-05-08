@@ -1,0 +1,75 @@
+@import './HomePage.css';
+/* Tái sử dụng header, logo, nền... */
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 680px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.main-content h1 {
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  transform: translate(-43%);
+  width: 500px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  text-align: center;
+  letter-spacing: -1.8px;
+  color: #0A082C;
+  margin: 0;
+}
+
+.decor-line {
+  position: absolute;
+  top: 300px;
+  left: 50%;
+  transform: translateX(-43%) rotate(-3deg);
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: -0.6px;
+  z-index: 1;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.smart-blue {
+  color: #1099EE;
+}
+
+.smart-dark {
+  color: #3a3a3a;
+}
+
+.blue {
+  color: #007bff;
+}
+
+.btn-qr {
+  background-color: #000 !important;
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.right-sectio {
+  display: flex;
+  gap: 10px;
+  margin-right: 2.35%;
+}

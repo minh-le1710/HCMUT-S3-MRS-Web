@@ -1,0 +1,107 @@
+@import './HomePage.css';
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0px;
+  height: calc(100vh - 280px);
+  gap: 60px;
+}
+
+.register-form {
+  max-width: 460px;
+  padding: 40px 160px;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-form h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #0A082C;
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+.sub-text {
+  font-size: 12px;
+  margin-bottom: 16px;
+  text-align: left;
+  color: #666;
+}
+
+.name-fields,
+.contact-fields {
+  display: flex;
+  gap: 10px;
+}
+
+.name-fields>div,
+.contact-fields>div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 12px;
+  margin-top: 0px;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+input {
+  padding: 12px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 87%;
+  padding-right: 40px;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  cursor: pointer;
+}
+
+.btn-register {
+  margin-top: 50px;
+  background-color: #296BFF;
+  color: white;
+  padding: 12px 150px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.register-image img {
+  width: 100%;
+  max-width: 580px;
+}
+
+.register-image {
+  flex-shrink: 0;
+  width: 580px;
+  transform: translateX(-150px);
+}
+
+.register-success {
+  margin-top: 24px;
+  color: green;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
