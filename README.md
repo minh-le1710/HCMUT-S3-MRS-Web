@@ -4,3 +4,4 @@
 
 A lightweight, responsive front-end for booking and checking in to smart study spaces—built with plain HTML, CSS & JavaScript and deployed on Vercel.
 
+## Features
