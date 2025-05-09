@@ -19,3 +19,8 @@ A lightweight, responsive front-end for booking and checking in to smart study s
 - Client-Side Authentication
 
 ## Demo
+
+![Demo 1](demo_img/1.png)  ![Demo 2](demo_img/2.png) ![Demo 3](demo_img/3.png) ![Demo 4](demo_img/4.png)
+
+ ![Demo 5](demo_img/5.png) ![Demo 6](demo_img/6.png) ![Demo 7](demo_img/7.png) ![Demo 8](demo_img/8.png) |
+ ![Demo 9](demo_img/9.png)  ![Demo 10](demo_img/10.png)  ![Demo 11](demo_img/11.png)  ![Demo 12](demo_img/12.png) 
